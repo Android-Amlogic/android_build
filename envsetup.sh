@@ -617,7 +617,7 @@ function lunch()
 
     export TARGET_BUILD_APPS=
 
-    local variant=$(echo -n $selection | sed -rn "s/(^[^\-]+)-([^\-]+)(-.*)/\2/p")
+    local variant=$(echo -n $selection | sed -e "s/^[^\-]*-//")
     check_variant $variant
     if [ $? -ne 0 ]
     then
